@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Research Breathworks</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <h1>Research Breathworks</h1>
+  <p class="subtitle">Clinically studied · Measurement-focused</p>
+</header>
+
+<section id="list" class="grid"></section>
+
+<script type="module">
+import { BREATHWORKS } from "./protocols.js";
+
+const list = document.getElementById("list");
+
+BREATHWORKS.forEach(b => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <h3>${b.name}</h3>
+    <p>${b.description}</p>
+    <button onclick="alert('Protocol selected: ${b.name}')">
+      Start
+    </button>
+  `;
+  list.appendChild(card);
+});
+</script>
+
+</body>
+</html>
