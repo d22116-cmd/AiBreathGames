@@ -1,37 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Research Breathworks</title>
-<link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Inter, sans-serif;
+  background: #ffffff;
+  color: #1d1d1f;
+}
 
-<header class="top">
-  <h1>Research Breathworks</h1>
-  <p class="subtitle">Clinically studied · Measurement-focused</p>
-</header>
+.hero, .top {
+  text-align: center;
+  padding: 80px 20px;
+}
 
-<section id="list" class="grid"></section>
+.subtitle {
+  color: #6e6e73;
+}
 
-<script type="module">
-import { BREATHWORKS } from "./protocols.js";
+.choices a {
+  margin: 16px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: #ff6b35;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
 
-const list = document.getElementById("list");
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 40px;
+}
 
-BREATHWORKS.forEach(b => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML = `
-    <h3>${b.name}</h3>
-    <p>${b.description}</p>
-    <button onclick="alert('Protocol selected: ${b.name}')">
-      Start
-    </button>
-  `;
-  list.appendChild(card);
-});
-</script>
+.card {
+  border: 1px solid #e5e5ea;
+  border-radius: 20px;
+  padding: 24px;
+}
 
-</body>
-</html>
+.card p {
+  color: #6e6e73;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #1d1d1f;
+  color: white;
+}
